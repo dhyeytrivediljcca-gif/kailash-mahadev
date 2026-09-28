@@ -1,0 +1,330 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-midnight: #02060D;
+    --color-himalayan-deep: #071321;
+    --color-deep-blue: #0C2035;
+    --color-abyss: #132C43;
+    --color-snow: #EAF2F7;
+    --color-moonlight: #B9D5F2;
+    --color-sacred-gold: #C8A96B;
+  }
+
+  body {
+    background-color: #02060D;
+    color: #EAF2F7;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, .font-cinzel {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.18em;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-sans-ui {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom cinematic glow and atmospheric utilities */
+.glow-moonlight {
+  text-shadow: 0 0 30px rgba(185, 213, 242, 0.45);
+}
+
+.glow-gold {
+  text-shadow: 0 0 25px rgba(200, 169, 107, 0.4);
+}
+
+.glow-shiva-aura {
+  box-shadow: 0 0 100px 30px rgba(12, 32, 53, 0.8), inset 0 0 80px rgba(185, 213, 242, 0.15);
+}
+
+/* Subtle breathing circle animation */
+@keyframes breatheInAndOut {
+  0%, 100% {
+    transform: scale(0.85);
+    opacity: 0.4;
+    box-shadow: 0 0 30px rgba(185, 213, 242, 0.2);
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.9;
+    box-shadow: 0 0 70px rgba(185, 213, 242, 0.5), 0 0 100px rgba(200, 169, 107, 0.25);
+  }
+}
+
+.animate-breathe {
+  animation: breatheInAndOut 8s ease-in-out infinite;
+}
+
+@keyframes slowMist {
+  0% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(-5%);
+  }
+}
+
+.animate-mist {
+  animation: slowMist 25s ease-in-out infinite;
+}
+
+/* Staged cinematic reveal animations: blur 10px -> 0, opacity 0 -> 1, translateY 30px -> 0 */
+@keyframes heroTypographyReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.hero-animate-title {
+  animation: heroTypographyReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0ms both;
+}
+
+.hero-animate-subtitle {
+  animation: heroTypographyReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+
+.hero-animate-desc {
+  animation: heroTypographyReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 400ms both;
+}
+
+.hero-animate-cta {
+  animation: heroTypographyReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 600ms both;
+}
+
+.hero-animate-scroll {
+  animation: heroTypographyReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 800ms both;
+}
+
+/* OM ritual animation: opacity 0 -> 1 -> 0, scale 0.85 -> 1 -> 1.05, blur 12px -> 0 -> 4px */
+@keyframes omRitualIntro {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+    filter: blur(12px);
+  }
+  35%, 65% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(4px);
+  }
+}
+
+.animate-om-ritual {
+  animation: omRitualIntro 2.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Thin vertical scroll line breathing animation */
+@keyframes verticalScrollLine {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 0.7;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+}
+
+.animate-vertical-line {
+  animation: verticalScrollLine 2.5s ease-in-out infinite;
+}
+
+@keyframes gentleFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.reveal-mountain {
+  animation: gentleFadeIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.reveal-clouds {
+  animation: gentleFadeIn 2.5s cubic-bezier(0.16, 1, 0.3, 1) 1.0s both;
+}
+
+.reveal-shiva-aura {
+  animation: gentleFadeIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1.4s both;
+}
+
+.reveal-title {
+  animation: cinematicReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both;
+}
+
+.reveal-subtitle {
+  animation: cinematicReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 2.2s both;
+}
+
+.reveal-desc {
+  animation: cinematicReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 2.5s both;
+}
+
+.reveal-cta {
+  animation: cinematicReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 2.8s both;
+}
+
+/* Symbol modal reveal animation */
+@keyframes symbolPanelIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Scroll-based text & component reveal system */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(8px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+
+.scroll-reveal-img {
+  opacity: 0;
+  transform: scale(1.04);
+  clip-path: inset(6% 3% 6% 3%);
+  filter: blur(5px);
+  transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1), clip-path 1.4s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, clip-path, filter;
+}
+
+.scroll-reveal-img.is-revealed {
+  opacity: 1;
+  transform: scale(1);
+  clip-path: inset(0% 0% 0% 0%);
+  filter: blur(0px);
+}
+
+/* Meditative Central ॐ Breathing Pulse */
+@keyframes omBreathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 35px rgba(185, 213, 242, 0.2);
+  }
+  50% {
+    transform: scale(1.018);
+    box-shadow: 0 0 55px rgba(185, 213, 242, 0.38);
+  }
+}
+
+.animate-om-breathe {
+  animation: omBreathe 6s ease-in-out infinite;
+}
+
+/* Master Luxury Editorial Utilities */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Center-outward animated underline for navigation links */
+.nav-underline-center {
+  position: relative;
+}
+.nav-underline-center::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(185, 213, 242, 0.9) 50%, transparent);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-50%);
+}
+.nav-underline-center:hover::after {
+  width: 100%;
+}
+
+/* Smooth inner panel content crossfade when switching active symbols */
+@keyframes panelContentIn {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+}
+
+.animate-panel-content-in {
+  animation: panelContentIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal, .scroll-reveal-img {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* Custom scrollbar for desktop */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #02050A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(191, 215, 255, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(191, 215, 255, 0.4);
+}
+

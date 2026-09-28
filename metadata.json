@@ -1,0 +1,6 @@
+{
+  "name": "Kailash — Mahadev Immersive Experience",
+  "description": "A cinematic, immersive digital journey into Mount Kailash and the transcendent stillness of Lord Shiva, featuring interactive 3D particle atmosphere, sacred symbolism, and Himalayan serenity.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
